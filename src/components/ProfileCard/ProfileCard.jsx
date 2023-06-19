@@ -5,11 +5,11 @@ import { parseJson } from '../../utils/parseJson'
 const ProfileCard = ({ profile = '' }) => {
     const { picture, banner, display_name, about } = parseJson(profile)
     return (
-        <div className="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 w-full overflow-hidden">
+        <div className="flex flex-col max-w-sm rounded-lg shadow bg-gray-800 border-gray-700 w-full overflow-hidden">
             <div className="flex align-middle justify-center py-8 rounded-t-lg" style={{ backgroundImage: `url(${banner})` }}>
-                <img className="object-cover rounded-full w-28 h-28 border-solid border-2 border-white" src={picture} alt="" />
+                <img loading="lazy" className="object-cover rounded-full w-28 h-28 border-solid border-2 border-white" src={picture} alt="" />
             </div>
-            <hr className="border-gray-500"/>
+            <hr className="border-gray-500" />
             <div className="p-5 flex flex-col h-full">
                 <h4 className="text-gray-100 text-base font-medium">{display_name}</h4>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{about}</p>
