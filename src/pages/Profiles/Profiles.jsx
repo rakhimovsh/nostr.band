@@ -6,7 +6,6 @@ import useFetch from '../../hooks/useFetch'
 const Profiles = () => {
 
     const {data, loading, error} = useFetch('/trending/profiles')
-
     return <>
         <div className="flex flex-wrap gap-8 justify-center">
             {
@@ -20,7 +19,7 @@ const Profiles = () => {
                             data?.profiles?.map((profile) => <ProfileCard key={profile.pubkey}
                                                                           profile={profile?.profile?.content}
                                                                           pubkey={profile?.pubkey}
-                                                                          newFollowers={profile.new_followers_count}/>)
+                                                                          newFollowers={profile?.new_followers_count}/>)
                         }
                     </>
 
