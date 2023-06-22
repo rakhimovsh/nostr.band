@@ -10,7 +10,7 @@ const Header = () => {
         <header className="pb-10">
             <div className="mb-5 flex justify-between items-center">
                 <Link to='/' className="flex items-center gap-2">
-                    <img className="w-10" src={Logo} />
+                    <img className="w-10" src={Logo} alt='logo'/>
                     <h1 className="text-2xl font-bold text-gray-300">Nostr.Band</h1>
                 </Link>
                 <LinkButton>Login <i className="ms-3 fa-solid fa-right-to-bracket"></i></LinkButton>

@@ -5,19 +5,22 @@ import useFetch from '../../hooks/useFetch'
 
 const Profiles = () => {
 
-    const { data, loading, error } = useFetch('/trending/profiles')
+    const {data, loading, error} = useFetch('/trending/profiles')
 
     return <>
         <div className="flex flex-wrap gap-8 justify-center">
             {
                 loading ? <>
-                    <SkeletonCard />
-                    <SkeletonCard />
-                    <SkeletonCard />
-                </> :
+                        <SkeletonCard/>
+                        <SkeletonCard/>
+                        <SkeletonCard/>
+                    </> :
                     <>
                         {
-                            data?.profiles?.map((profile) => <ProfileCard key={profile.pubkey} profile={profile?.profile?.content} />)
+                            data?.profiles?.map((profile) => <ProfileCard key={profile.pubkey}
+                                                                          profile={profile?.profile?.content}
+                                                                          pubkey={profile?.pubkey}
+                                                                          newFollowers={profile.new_followers_count}/>)
                         }
                     </>
 
